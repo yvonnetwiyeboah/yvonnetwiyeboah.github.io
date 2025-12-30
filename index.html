@@ -6,24 +6,24 @@
   <title>Yvonne Twi-Yeboah | Data Analytics Portfolio</title>
 
   <style>
-    :root { 
-      --bg:#0b1020; 
-      --card:#121a33; 
-      --text:#eef2ff; 
-      --muted:#b9c2ff; 
-      --link:#7aa2ff; 
-      --chip:#1b2750; 
+    :root {
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#eef2ff;
+      --muted:#b9c2ff;
+      --link:#7aa2ff;
+      --chip:#1b2750;
     }
-    body {
+    body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:linear-gradient(120deg,#0b1020,#0a1630);
       color:var(--text);
     }
-    .wrap{ max-width:980px; margin:0 auto; padding:28px 18px 60px; }
+    .wrap{ max-width:1000px; margin:0 auto; padding:28px 18px 60px; }
     h1{ margin:0; font-size:34px; }
-    .subtitle{ margin:12px 0; color:var(--muted); line-height:1.6; max-width:760px; }
-    .links{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    h2{ margin:24px 0 10px; }
+    p{ color:var(--muted); line-height:1.6; max-width:850px; }
     a{ color:var(--link); text-decoration:none; }
     .btn{
       display:inline-block;
@@ -32,9 +32,10 @@
       border:1px solid rgba(255,255,255,.12);
       border-radius:12px;
       font-size:14px;
+      cursor:pointer;
+      margin-right:6px;
+      margin-top:6px;
     }
-    .section{ margin-top:30px; }
-    .section h2{ font-size:20px; margin-bottom:10px; }
     .chips{ display:flex; gap:8px; flex-wrap:wrap; }
     .chip{
       background:var(--chip);
@@ -44,66 +45,184 @@
       font-size:12px;
       color:var(--muted);
     }
-    ul{ margin-left:18px; color:var(--muted); line-height:1.7; max-width:820px; }
+    ul{ color:var(--muted); line-height:1.7; max-width:850px; }
+
+    /* Tabs */
+    .tabs{ display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
+    .tab.active{ outline:2px solid rgba(122,162,255,.6); }
+
+    /* Sections */
+    .section{ display:none; margin-top:20px; }
+    .section.active{ display:block; }
+
+    /* Projects */
+    .filters{ display:flex; gap:10px; flex-wrap:wrap; margin:14px 0; }
+    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+    .card{
+      background:rgba(18,26,51,.9);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:16px;
+    }
+    .card h3{ margin:0 0 6px; font-size:16px; }
     footer{ margin-top:40px; color:var(--muted); font-size:13px; }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <h1>Yvonne Twi-Yeboah</h1>
+<div class="wrap">
 
-    <p class="subtitle">
-      Data Analytics Portfolio. MSc Business Analytics & Information Management (University of Delaware).
-      I build end-to-end analytics solutions—cleaning data, uncovering insights, and communicating results to support better decisions.
-      <strong>Open to remote, hybrid, or in-person roles.</strong>
-    </p>
+  <!-- HEADER -->
+  <h1>Yvonne Twi-Yeboah</h1>
+  <p>
+    Data Analytics Portfolio. MSc Business Analytics & Information Management (University of Delaware).  
+    I build end-to-end analytics solutions—from cleaning data to uncovering insights and communicating results
+    to support better business decisions.  
+    <strong>Open to remote, hybrid, or in-person roles.</strong>
+  </p>
 
-    <div class="links">
-      <a class="btn" href="projects.html">Projects</a>
-      <a class="btn" href="assets/Yvonne_Twi-Yeboah_Resume.pdf" target="_blank">Resume (PDF)</a>
-      <a class="btn" href="https://linkedin.com/in/yvonnety30" target="_blank">LinkedIn</a>
-      <a class="btn" href="https://github.com/yvonnetwiyeboah" target="_blank">GitHub</a>
-      <a class="btn" href="mailto:yvonnetwiyeboah@gmail.com">Email</a>
-    </div>
+  <!-- NAV TABS -->
+  <div class="tabs">
+    <span class="btn tab active" data-tab="home">Home</span>
+    <span class="btn tab" data-tab="projects">Projects</span>
+    <span class="btn tab" data-tab="skills">Skills</span>
+    <span class="btn tab" data-tab="about">About</span>
 
-    <!-- SKILLS -->
-    <div class="section">
-      <h2>Skills</h2>
-      <div class="chips">
-        <span class="chip">Data Analysis</span>
-        <span class="chip">Business Intelligence</span>
-        <span class="chip">Data Visualization</span>
-        <span class="chip">Data Storytelling</span>
-        <span class="chip">SQL</span>
-        <span class="chip">SAS</span>
-        <span class="chip">Python</span>
-        <span class="chip">R</span>
-        <span class="chip">Excel</span>
-        <span class="chip">Process Improvement</span>
-        <span class="chip">Stakeholder Communication</span>
-      </div>
-    </div>
-
-    <!-- ABOUT (ANALYTICS-MINDED) -->
-    <div class="section">
-      <h2>About</h2>
-      <ul>
-        <li>I approach problems with an analytics mindset—starting from clear business questions, exploring and validating data, and translating findings into actionable insights.</li>
-        <li>Experienced in end-to-end analytics workflows including data cleaning, exploratory analysis, feature creation, modeling, and visualization.</li>
-        <li>Comfortable working with structured datasets and explaining results to both technical and non-technical stakeholders.</li>
-        <li>Interested in analyst roles across industries and business functions where data is used to improve decision-making, efficiency, and performance.</li>
-      </ul>
-    </div>
-
-    <footer>
-      © <span id="year"></span> Yvonne Twi-Yeboah · 
-      <a href="mailto:yvonnetwiyeboah@gmail.com">yvonnetwiyeboah@gmail.com</a>
-    </footer>
+    <a class="btn" href="assets/Yvonne_Twi-Yeboah_Resume.pdf" target="_blank">Resume (PDF)</a>
+    <a class="btn" href="https://linkedin.com/in/yvonnety30" target="_blank">LinkedIn</a>
+    <a class="btn" href="https://github.com/yvonnetwiyeboah" target="_blank">GitHub</a>
+    <a class="btn" href="mailto:yvonnetwiyeboah@gmail.com">Email</a>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- HOME -->
+  <div id="home" class="section active">
+    <h2>Welcome</h2>
+    <p>
+      This site showcases my analytics projects and skills. The focus is on transferable analytics
+      capabilities that apply across industries and roles.
+    </p>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="projects" class="section">
+    <h2>Projects</h2>
+    <p>Filter projects by skill area.</p>
+
+    <div class="filters">
+      <span class="btn filter active" data-filter="all">All</span>
+      <span class="btn filter" data-filter="analytics">Analytics</span>
+      <span class="btn filter" data-filter="sql">SQL</span>
+      <span class="btn filter" data-filter="sas">SAS</span>
+      <span class="btn filter" data-filter="python">Python</span>
+      <span class="btn filter" data-filter="bi">Dashboards / BI</span>
+    </div>
+
+    <div class="grid">
+      <div class="card" data-tags="analytics sas bi">
+        <h3>Credit Risk Analysis — Lending Club</h3>
+        <p>
+          End-to-end analysis in SAS Studio including data preparation,
+          default rate analysis, segmentation, and logistic regression modeling.
+        </p>
+        <a class="btn" href="https://github.com/yvonnetwiyeboah/credit-risk-analysis-lending-club" target="_blank">
+          View GitHub Repo
+        </a>
+        <div class="chips">
+          <span class="chip">Analytics</span>
+          <span class="chip">SAS</span>
+          <span class="chip">Modeling</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="analytics sql">
+        <h3>SQL Analytics Portfolio (Coming Soon)</h3>
+        <p>Reporting, KPI analysis, validation checks, and segmentation.</p>
+        <div class="chips">
+          <span class="chip">SQL</span>
+          <span class="chip">Analytics</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="analytics python bi">
+        <h3>Analytics Project (Coming Soon)</h3>
+        <p>Python analysis, dashboards, and applied business insights.</p>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">BI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="chips">
+      <span class="chip">Data Analysis</span>
+      <span class="chip">Business Intelligence</span>
+      <span class="chip">Data Visualization</span>
+      <span class="chip">Data Storytelling</span>
+      <span class="chip">SQL</span>
+      <span class="chip">SAS</span>
+      <span class="chip">Python</span>
+      <span class="chip">R</span>
+      <span class="chip">Excel</span>
+      <span class="chip">Process Improvement</span>
+      <span class="chip">Stakeholder Communication</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" class="section">
+    <h2>About</h2>
+    <ul>
+      <li>I approach problems with an analytics mindset—starting from business questions and validating data before drawing conclusions.</li>
+      <li>Experienced across the full analytics lifecycle: data cleaning, exploration, feature creation, modeling, and visualization.</li>
+      <li>Comfortable communicating insights to both technical and non-technical stakeholders.</li>
+      <li>Open to analyst roles across industries and business functions.</li>
+    </ul>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Yvonne Twi-Yeboah ·
+    <a href="mailto:yvonnetwiyeboah@gmail.com">yvonnetwiyeboah@gmail.com</a>
+  </footer>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* Tab switching */
+  const tabs = document.querySelectorAll(".tab");
+  const sections = document.querySelectorAll(".section");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      sections.forEach(s => s.classList.remove("active"));
+
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
+
+  /* Project filtering */
+  const filters = document.querySelectorAll(".filter");
+  const cards = document.querySelectorAll(".card");
+
+  filters.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filters.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const f = btn.dataset.filter;
+
+      cards.forEach(card => {
+        const tags = card.dataset.tags.split(" ");
+        card.style.display =
+          f === "all" || tags.includes(f) ? "block" : "none";
+      });
+    });
+  });
+</script>
 </body>
 </html>
